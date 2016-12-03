@@ -1,0 +1,19 @@
+dn: dc=barenode,dc=org
+objectClass: top
+objectClass: dcObject
+objectclass: organization
+o: barenode
+dc: barenode
+
+dn: cn=admin,dc=barenode,dc=org
+objectClass: organizationalRole
+cn: Manager
+description: Directory Manager
+
+dn: ou=user,dc=barenode,dc=org
+objectClass: organizationalUnit
+ou: users
+
+dn: ou=group,dc=barenode,dc=org
+objectClass: organizationalUnit
+ou: groups
