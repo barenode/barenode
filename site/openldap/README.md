@@ -3,13 +3,13 @@
 ## OpenLDAP server
 
 <pre>
-#  yum install -y openldap openldap-clients openldap-servers
+<b>#  yum install -y openldap openldap-clients openldap-servers</b>
 </pre>
 
 Create olcRootPW Root Password. Create olcRootDN Account as Admin. Create olcSuffix Domain Name
 
 <pre>
-]# slappasswd
+<b># slappasswd</b>
 New password:
 Re-enter new password:
 {SSHA}IcSlX0Ipk/vD+ebj+b+R3qmx6zqeO8gC
@@ -25,7 +25,7 @@ olcRootPW: {SSHA}IcSlX0Ipk/vD+ebj+b+R3qmx6zqeO8gC
 </pre>
 
 <pre>
-ldapadd -Y EXTERNAL -H ldapi:/// -f chrootpw.ldif
+<b># ldapadd -Y EXTERNAL -H ldapi:/// -f chrootpw.ldif</b>
 SASL/EXTERNAL authentication started
 SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
 SASL SSF: 0
@@ -34,14 +34,14 @@ modifying entry "olcDatabase={0}config,cn=config"
 
 Import basic schemas.
 <pre>
-#  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif 
-#  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif 
-#  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif 
+<b>#  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif</b> 
+<b>#  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif</b>
+<b>#  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif</b> 
 </pre>
 
 Generate directory manager's password
 <pre>
-slappasswd
+<b># slappasswd</b> 
 New password:
 Re-enter new password:
 {SSHA}6S5lL15Xjyw26861sMqyByh1TqR4xk1J
@@ -85,11 +85,11 @@ olcAccess: {2}to * by dn="cn=admin,dc=barenode,dc=org" write by * read</pre>
 </pre>
 
 <pre>
-ldapadd -x -D cn=admin,dc=barenode,dc=org -W -f basedomain.ldif                                                                                                                                                  
+<b># ldapadd -x -D cn=admin,dc=barenode,dc=org -W -f basedomain.ldif</b>
 </pre>
 
 <pre>
-# ldapsearch -x -W -D "cn=admin,dc=barenode,dc=org" -b "dc=barenode,dc=org" "(objectclass=*)"
+<b># ldapsearch -x -W -D "cn=admin,dc=barenode,dc=org" -b "dc=barenode,dc=org" "(objectclass=*)"</b>
 
 Enter LDAP Password:
 # extended LDIF
