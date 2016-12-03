@@ -1,4 +1,4 @@
-# Integra  (CentOS 7)
+# barenode  (CentOS 7)
 
 - [ ] Bind9
 - [ ] OpenLDAP
