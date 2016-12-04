@@ -1,6 +1,6 @@
 # OpenLDAP
 
-## OpenLDAP server
+## Install OpenLDAP server
 
 <pre>
 <b>#  yum install -y openldap openldap-clients openldap-servers</b>
@@ -133,4 +133,39 @@ result: 0 Success
 
 # numResponses: 5
 # numEntries: 4
+</pre>
+
+
+
+## Configuring TLS
+
+### Creating self signed certificate
+
+<pre>
+<b># cd /etc/pki/tls/certs </b>
+<b># make server.key </b>
+...
+Enter pass phrase:# set passphrase
+Verifying - Enter pass phrase:# confirm
+</pre>
+
+Remove passphrase from private key
+<pre>
+<b># openssl rsa -in server.key -out server.key </b>
+Enter pass phrase for server.key:# input passphrase
+writing RSA key
+</pre>
+
+<pre>
+<b># make server.csr</b>
+...
+A challenge password []:# Enter
+An optional company name []:# Enter
+</pre>
+
+<pre>
+<b># makeopenssl x509 -in server.csr -out server.crt -req -signkey server.key -days 3650</b>
+Signature ok
+...
+Getting Private key
 </pre>

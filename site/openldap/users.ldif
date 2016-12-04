@@ -1,0 +1,20 @@
+# users.ldif
+#
+# Various users.
+
+dn: cn=nssproxy,ou=user,dc=barenode,dc=org
+uid: nssproxy
+gecos: Network Service Switch Proxy User
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+userPassword: {SSHA}RsAMqOI3647qg1gAZF3x2BKBnp0sEVfa
+shadowLastChange: 15140
+shadowMin: 0
+shadowMax: 99999
+shadowWarning: 7
+loginShell: /bin/false
+uidNumber: 801
+gidNumber: 801
+homeDirectory: /home/nssproxy

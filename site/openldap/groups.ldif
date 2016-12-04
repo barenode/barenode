@@ -1,0 +1,10 @@
+# groups.ldif
+#
+# A collection of system and user groups.
+
+dn: cn=nssproxy,ou=group,dc=barenode,dc=org
+cn: nssproxy
+objectClass: top
+objectClass: posixGroup
+gidNumber: 801
+description: Network Service Switch Proxy
